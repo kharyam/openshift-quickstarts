@@ -1,4 +1,4 @@
 HTTP_PROXY=http://mwg.lb.ssa.gov:80
 HTTPS_PROXY=http://mwg.lb.ssa.gov:80
 NO_PROXY=172.30.58.227
-MAVEN_ARGS=-e -Popenshift -DskipTests -Dcom.redhat.xpaas.repo.redhatga package -Djava.net.preferIPv4Stack=true -s$LOCAL_SOURCE_DIR/settings.xml
+MAVEN_ARGS=-e -Popenshift -DskipTests -Dcom.redhat.xpaas.repo.redhatga package -Djava.net.preferIPv4Stack=true -sopenshift-quickstarts/settings.xml
