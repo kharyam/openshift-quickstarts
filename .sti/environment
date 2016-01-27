@@ -1,0 +1,3 @@
+HTTP_PROXY=http://mwg.lb.ssa.gov:80
+HTTPS_PROXY=http://mwg.lb.ssa.gov:80
+NO_PROXY=172.30.58.227
