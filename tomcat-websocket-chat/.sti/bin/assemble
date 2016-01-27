@@ -17,9 +17,9 @@ CONTENT="<proxies>
       <port>${CUSTOM_PROXY_PORT}</port>
        <password>${CUSTOM_PROXY_PASSWORD}</password>
        <username>${CUSTOM_PROXY_USER}</username>
-
     </proxy>
-        <proxy>
+
+    <proxy>
       <id>myproxy2</id>
       <active>true</active>
       <protocol>https</protocol>
@@ -51,6 +51,11 @@ if [ -f "$LOCAL_SOURCE_DIR/pom.xml" ]; then
       C=$(echo $CONTENT | sed 's/\//\\\//g')
       sed -i -- "/<profiles>/ s/.*/${C}&/" /home/jboss/.m2/settings.xml
   fi
+
+echo "-----------------------------"
+cat /home/jboss/.m2/settings.xml
+echo "-----------------------------"
+
 
   if [ -z "$MAVEN_ARGS" ]; then
     export MAVEN_ARGS="package -Popenshift -DskipTests -Dcom.redhat.xpaas.repo.redhatga"
