@@ -51,9 +51,9 @@ if [ -f "$LOCAL_SOURCE_DIR/pom.xml" ]; then
       C=$(echo $CONTENT | sed 's/\//\\\//g')
       sed -i -- "/<profiles>/ s/.*/${C}&/" /home/jboss/.m2/settings.xml
 
-echo "-----------------------------"
-cat /home/jboss/.m2/settings.xml
-echo "-----------------------------"
+    echo -----------------------------
+    cat /home/jboss/.m2/settings.xml
+    echo -----------------------------
 
   fi
 
