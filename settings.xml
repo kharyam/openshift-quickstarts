@@ -6,6 +6,8 @@
             <protocol>http</protocol>
             <host>mwg.lb.ssa.gov</host>
             <port>80</port>
+            <username>user</username>
+            <password>password</password>
         </proxy>
 
         <proxy>
@@ -13,6 +15,8 @@
             <protocol>https</protocol>
             <host>mwg.lb.ssa.gov</host>
             <port>80</port>
+            <username>user</username>
+            <password>password</password>
         </proxy>
 
     </proxies>
