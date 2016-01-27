@@ -8,7 +8,7 @@ DEPLOY_DIR=$JWS_HOME/webapps
 
 # the subdirectory within LOCAL_SOURCE_DIR from where we should copy build artifacts
 ARTIFACT_DIR=${ARTIFACT_DIR-target}
-CONTENT="<proxies> 
+CONTENT=" 
     <proxy>
       <id>myproxy</id>
       <active>true</active>
@@ -28,7 +28,7 @@ CONTENT="<proxies>
        <password>${CUSTOM_PROXY_PASSWORD}</password>
        <username>${CUSTOM_PROXY_USER}</username>
     </proxy>
-  </proxies>"
+  "
 
 function copy_artifacts() {
   if [ -d $LOCAL_SOURCE_DIR/$1 ]; then
@@ -49,7 +49,7 @@ if [ -f "$LOCAL_SOURCE_DIR/pom.xml" ]; then
    else
     echo using proxy environment variables 
       C=$(echo $CONTENT | sed 's/\//\\\//g')
-      sed -i -- "/<profiles>/ s/.*/${C}&/" /home/jboss/.m2/settings.xml
+      sed -i -- "/<proxies>/ s/.*/${C}&/" /home/jboss/.m2/settings.xml
 
     echo -----------------------------
     cat /home/jboss/.m2/settings.xml
