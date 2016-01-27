@@ -50,11 +50,12 @@ if [ -f "$LOCAL_SOURCE_DIR/pom.xml" ]; then
     echo using proxy environment variables 
       C=$(echo $CONTENT | sed 's/\//\\\//g')
       sed -i -- "/<profiles>/ s/.*/${C}&/" /home/jboss/.m2/settings.xml
-  fi
 
 echo "-----------------------------"
 cat /home/jboss/.m2/settings.xml
 echo "-----------------------------"
+
+  fi
 
 
   if [ -z "$MAVEN_ARGS" ]; then
